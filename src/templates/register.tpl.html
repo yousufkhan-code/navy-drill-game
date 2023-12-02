@@ -1,0 +1,32 @@
+<style type="text/css">
+	.inside_div{
+		text-align: center; 
+		display:flex; 
+		flex-direction: column; 
+		vertical-align:center ; 
+		justify-content: center; 
+		align-items: center; 
+		width:200px;	
+	}
+</style>
+<div style="padding-left: 39%;">
+	<?php if($this->registration_successful==false): ?>
+		<?php foreach ($this->errors as $key => $value): ?>
+			<div style="color:red;"><?php echo $value; ?></div>
+		<?php endforeach; ?>
+		<div class="inside_div">
+			<form method="POST">
+				
+				<input type="email" name="email" placeholder="Use your email address here" required="yes">
+				<input type="text" name="username" placeholder="Create a Username that will be displayed across this platform" required="yes">
+				<input type="password" name="password" placeholder="Your secret password" required="yes">
+				<input type="password" name="password_repeat" placeholder="Confirm your secret password" required="yes">
+				<input type="submit" name="action" value="register">
+
+			</form>
+		</div>
+	<?php else: ?>
+		<h2>An email has been sent to you with an activation link, please click on the link to complete the registration of your account</h2>
+	<?php endif; ?>
+	
+</div>

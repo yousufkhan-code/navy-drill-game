@@ -18,12 +18,11 @@ if(substr($url,-1)=="/")
 switch ($url)
 {
 	case "/navy-drill/register":
-		echo "register user";
+		include('controller/register.php');
 		break;
 	
 	default:
 		echo "hello world";
-		echo $url;
 		break;
 }
 ?>
